@@ -69,7 +69,14 @@ class Sydney_Services_Type_A extends WP_Widget {
 		extract($args);
 
 		$title 			= ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
+		$title2         = '';
+		if (strpos($title, '/')) {
+			$array  = explode('/',$title);
+			$title  = $array[0];
+			$title2 = $array[1];
+		} 
 		$title 			= apply_filters( 'widget_title', $title, $instance, $this->id_base );
+		$title2         = apply_filters( 'widget_title', $title2, $instance, $this->id_base );
 		$see_all 		= isset( $instance['see_all'] ) ? esc_url($instance['see_all']) : '';
 		$see_all_text 	= isset( $instance['see_all_text'] ) ? esc_html($instance['see_all_text']) : '';		
 		$number 		= ( ! empty( $instance['number'] ) ) ? intval( $instance['number'] ) : -1;
@@ -92,7 +99,7 @@ class Sydney_Services_Type_A extends WP_Widget {
 		if ($services->have_posts()) :
 ?>
 			<?php if ( $title ) echo $before_title . $title . $after_title; ?>
-
+            <?php if ( $title2 ) echo $before_title . $title2 . $after_title; ?>
 					<?php while ( $services->have_posts() ) : $services->the_post(); ?>
 						<?php $icon = get_post_meta( get_the_ID(), 'wpcf-service-icon', true ); ?>
 						<?php $link = get_post_meta( get_the_ID(), 'wpcf-service-link', true ); ?>
