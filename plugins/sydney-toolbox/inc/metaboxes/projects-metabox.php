@@ -30,9 +30,9 @@ class Sydney_Toolbox_Projects {
         global $post;
 		add_meta_box(
 			'st_projects_metabox'
-			,__( 'Project info', 'sydney_toolbox' )
+			,__( 'Course info', 'sydney_toolbox' )
 			,array( $this, 'render_meta_box_content' )
-			,'projects'
+			,'course'
 			,'advanced'
 			,'high'
 		);
@@ -73,7 +73,7 @@ class Sydney_Toolbox_Projects {
 		$link = get_post_meta( $post->ID, 'wpcf-project-link', true );
 
 	?>
-		<p><strong><label for="sydney_toolbox_projects_info"><?php _e( 'Project link', 'sydney_toolbox' ); ?></label></strong></p>
+		<p><strong><label for="sydney_toolbox_projects_info"><?php _e( 'Course link', 'sydney_toolbox' ); ?></label></strong></p>
 		<p><em><?php _e('Add an URL here to make this project link to another page (internal or external). Leave it empty and it will default to its own page.', 'sdyney_toolbox'); ?></em></p>
 		<p><input type="text" class="widefat" id="sydney_toolbox_projects_info" name="sydney_toolbox_projects_info" value="<?php echo esc_url($link); ?>"></p>	
 

@@ -34,7 +34,7 @@ class Sydney_Toolbox_Singles_Options {
 
 	public function add_meta_box( $post_type ) {
         global $post;
-        $post_types = array('post', 'page', 'services', 'employees', 'testimonials', 'projects', 'timeline-events');
+        $post_types = array('post', 'page', 'services', 'employees', 'testimonials', 'course', 'timeline-events');
         if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
 				'st_singles_metabox'

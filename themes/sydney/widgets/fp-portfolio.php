@@ -29,7 +29,7 @@ class Sydney_Portfolio extends WP_Widget {
 
     $options = array(
      'posts'         => $number,
-     'post_type'     => 'projects',
+     'post_type'     => 'course',
      'include'       => $includes,
      'filter'        => $show_filter,
      'show_all_text' => ! empty( $show_all_text ) ? $show_all_text : __('Show all', 'sydney')
